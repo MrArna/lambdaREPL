@@ -68,8 +68,8 @@ To use boolean: `bool (and T T)` will return T
 
 The tests and the application were developed in a OS X environment.
 
-#### Testkit
- 
+#### Fansuite
+Test were made automated using the fansuite framework provided by the Scalatest library. 
 
 
 #Acknowledgments
