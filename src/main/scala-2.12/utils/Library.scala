@@ -28,6 +28,8 @@ object Library {
     number = \n.n S Z;
                """
 
+
+  //laod definitions in AST form
   def load() = {
     val parse = new LambdaParser()
     import parse.{ Success, NoSuccess }

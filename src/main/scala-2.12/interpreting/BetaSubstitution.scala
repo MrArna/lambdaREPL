@@ -6,6 +6,7 @@ import utils.Library
 /**
   * Created by Marco on 10/11/16.
   */
+//apply the basic beta substitution, recursively if required
 class BetaSubstitution (argV: Variable, replacement: Expression) {
 
   val binder = new Binder(Library.load())

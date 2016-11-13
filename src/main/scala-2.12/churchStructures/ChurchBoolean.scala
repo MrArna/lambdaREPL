@@ -6,6 +6,8 @@ import parsing.AST.{Expression, Variable}
 /**
   * Created by Marco on 11/11/16.
   */
+
+//same reasoning as numbers
 object ChurchBoolean
 {
 

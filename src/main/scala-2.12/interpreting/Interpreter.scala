@@ -7,11 +7,13 @@ import utils.Printer
 /**
   * Created by Marco on 09/11/16.
   */
+//by default show each step in the evaluation
 class Interpreter(eachStep: Boolean = true)
 {
 
   val pretty = new Printer
 
+  //definition of what is a value
   def isValue(term: Expression): Boolean = term match {
     case _: Lambda        => true
     case _: Variable      => true
@@ -20,7 +22,7 @@ class Interpreter(eachStep: Boolean = true)
     case _                => false
   }
 
-
+  // evaluate recursivlely depending on the pattern matched if found a basic structure, than apply a beta substitution
   def evaluate(term: Expression):Expression = term match
   {
     case FunctionApplication(Lambda(argDef, body), arg) if isValue(arg) => new BetaSubstitution(argDef, arg) apply (body)
@@ -30,6 +32,7 @@ class Interpreter(eachStep: Boolean = true)
     case FunctionApplication(fun, arg) => FunctionApplication(evaluate(fun), arg)
   }
 
+  // evaluation in progress
   def apply(term: Expression): Expression =
     try {
       val term2 = evaluate(term)
