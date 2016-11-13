@@ -10,7 +10,7 @@ object Main {
   val parser = new LambdaParser()
   var binder = new Binder(Library.load())
   val pretty = new Printer
-  val interpreter = new Interpreter
+  val interpreter = new Interpreter()
 
   def main(args: Array[String]) {
 

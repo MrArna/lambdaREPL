@@ -1,6 +1,6 @@
 package interpreting
 
-import churchStructures.ChurchNumber
+import churchStructures.{ChurchBoolean, ChurchNumber}
 import parsing.AST.{Expression, FunctionApplication, Lambda, Variable}
 import utils.Printer
 
@@ -16,6 +16,7 @@ class Interpreter(eachStep: Boolean = true)
     case _: Lambda        => true
     case _: Variable      => true
     case ChurchNumber(_)  => true
+    case ChurchBoolean(_) => true
     case _                => false
   }
 

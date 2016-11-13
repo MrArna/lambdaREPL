@@ -8,13 +8,23 @@ import parsing.AST.{Expression, FunctionApplication, Lambda, Variable}
   */
 class Printer {
 
-  def apply(expr: Expression): String = expr match {
-    case Lambda(arg, body)                => p"λ$arg.$body"
-    case FunctionApplication(fun, arg)    => p"$fun $arg"
-    case Variable(identifier,scope)       => s"$identifier"
-    case ChurchNumber(i)                  => i.toString
-    case ChurchBoolean(b)                 => b.toString
+  def apply(expr: Expression): String =
+  {
 
+    if (ChurchNumber.unapply(expr).isEmpty) {
+      expr match {
+        case Lambda (arg, body) => p"λ$arg.$body"
+        case FunctionApplication (fun, arg) => p"$fun $arg"
+        case Variable (identifier, scope) => s"$identifier"
+        case ChurchNumber (i) => i.toString
+        case ChurchBoolean (b) => b.toString
+
+      }
+    }
+    else
+    {
+      ChurchNumber.unapply(expr).get.toString
+    }
   }
 
   implicit class PrettyPrinting(val sc: StringContext) {
