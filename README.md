@@ -1,14 +1,14 @@
-CS474 @ UIC: HOMEWORK3
+LAMNDA REPL
 ======================
-Developed by Marco Arnaboldi (marnab2@uic.edu)
+Developed by Marco Arnaboldi (marnab2@uic.edu) as CS474 @ UIC: HOMEWORK3
 
-#Description
+# Description
 --------------------
 In your fourth and the final homework assignment you will solidify the knowledge of lambda-calculus by designing and implementing an untyped lambda-calculus interpreter. Your goal is to gain experience with the fundamentals of the functional programming languages and to understand reduction and conversion rules of the lambda calculus. You will implement your lambda interpreter in Scala and you will build and RUN your project using the SBT with the runMain command from the command line. In your lambda interpreter, you will use the reserved keyword lambda for designating the Greek letter lambda. You will define the rules for creating valid names (e.g., what characters they can contain, can the names start with a digit) using a regular expression. You will use the latest community version of IntelliJ IDE for this assignment.
 
 
 
-#Development & Design choices
+# Development & Design choices
 -----------------
 The application was developed with IntelliJ, with the use of SBT in order to manage the libraries. It has been designed in order to be as extendable as possible.
 In detail, it's composed by 4 modules and different classes:
@@ -38,32 +38,32 @@ In detail, it's composed by 4 modules and different classes:
 
 Further information about the methods and their behaviors can be found in the comment inside the code.
 
-#Functionalities
+# Functionalities
 ----------------
 
-######Main functionality
+###### Main functionality
 
 The application evaluate lambda expression prompted into the command line provided, showing all the evaluation steps.
 
-######Additional functionalities
+###### Additional functionalities
 The application allows userd defined shortcuts and also the evaluation of boolean, number and recursive expression
 
-#Usage
+# Usage
 ----------------
 
-######Launch
+###### Launch
 To use the application, open the terminal and type as the following snippet of code, from the folder where the project is located:
 
 `sbt run`
 
-######In app
+###### In app
 
 Instead of using lambda symbol, use '\'. E.g.: λx.x should be expressed as \x.x.
 Define a function do: `myFunc = lambda expression`
 To use number: `number (pow 2 2)` will return 4
 To use boolean: `bool (and T T)` will return T
 
-#Test
+# Test
 ----------------
 
 The tests and the application were developed in a OS X environment.
@@ -72,6 +72,6 @@ The tests and the application were developed in a OS X environment.
 Test were made automated using the fansuite framework provided by the Scalatest library. 
 
 
-#Acknowledgments
+# Acknowledgments
 ---------------
 Inspiration was taken by the [Lambda function Tutorial](https://zeroturnaround.com/rebellabs/parsing-lambda-calculus-in-scala/) provided by ZeroTurnAround. The code was rewritten and readapted in order to implement the described functionalities.
